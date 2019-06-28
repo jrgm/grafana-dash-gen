@@ -70,6 +70,10 @@ function publish(dashboard, opts) {
         overwrite: true
     };
 
+    if (cfg.folderId) {
+      createData.folderId = cfg.folderId;
+    }
+
     var j = request.jar();
     var cookie = request.cookie(cfg.cookie);
     j.setCookie(cookie, cfg.url);
